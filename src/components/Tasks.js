@@ -1,11 +1,13 @@
 import Task from "../Task"
 
-function Tasks({tasks}) {
+function Tasks({tasks, onDelete}) {
   return (
     <>
-     {tasks.map((task)=>
-     (<Task key = {task.id} task ={task} />
-
+     {tasks.map((task)=> (<Task 
+      key = {task.id} 
+      task = {task} 
+      onDelete ={onDelete}/>
+     
      ))} 
      {/* (<h3 key = {task.id}>{task.text}</h3>))}  */}
     </>
