@@ -50,14 +50,15 @@ body {
 }
 
 .container {
-  max-width: 66vh;
+  max-width: 76vh;
   margin: 1px auto;
   overflow: auto;
   min-height: 300px;
   border: 1px solid steelblue;
   padding: 1rem;
   border-radius: 5px;
-  background-color: #7c7c80a4;
+  background-color: #505055a4;
+  /* background:linear-gradient(to right, rgba(255, 239, 64, 0.4), rgba(59, 38, 182, 0.3) ) */
   /* color: black; */
 }
 
@@ -349,6 +350,7 @@ li:nth-child(7) {
 
 h1,h3,p,label {
   color: whitesmoke;
+  /* color: #000; */
 }
 
 @keyframes particleAnimation
