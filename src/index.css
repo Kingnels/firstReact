@@ -54,6 +54,7 @@ body {
   margin: 1px auto;
   overflow: auto;
   min-height: 300px;
+  min-width: 22rem;
   border: 1px solid steelblue;
   padding: 1rem;
   border-radius: 5px;

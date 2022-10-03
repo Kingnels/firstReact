@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState} from "react" 
 
-function AddTask(onAdd) {
+function AddTask({onAdd}) {
 
     const [text, setText] = useState('')
     const [day, setDay] = useState('')
@@ -14,7 +14,8 @@ function AddTask(onAdd) {
             alert('please add a task')
             return
         }
-        onAdd({text, day, reminder})
+       onAdd({text, day, reminder})
+    //    onAdd = {this.onAdd()}
 
         setText('')
         setDay('')

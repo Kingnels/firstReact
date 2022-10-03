@@ -5,6 +5,9 @@ import {useState} from 'react'
 import AddTask from "./components/AddTask";
 
 function App() {
+
+  const [showAddTask, setShowAddTask] = useState(false)
+
   const [tasks, setTasks] = useState(
     [
       {
@@ -27,15 +30,18 @@ function App() {
       }
   ]
   )
-  //add the task
-  const addTask = (task) =>{
-    console.log(task)
+  //add the task 
+  function addTask (task){
+    const id = Math.floor(Math.random()*1000)+1
+    const newTask = {id, ...task}
+    setTasks([...tasks, newTask])
+    // console.log(tas k)
   }
   // Deleting a Task
   const deleteTask = (id) =>{
     setTasks(tasks.filter((task)=>task.id !== id ))
   }
-
+ 
   //toggle reminder
 
   const toggleReminder = (id) => {
@@ -45,11 +51,10 @@ function App() {
 
   return (
     <div className ='container'>
-      <Header />
-      <AddTask onAdd = {addTask}/>
-      {tasks.length > 0 ? 
-      (<Tasks tasks = {tasks} onDelete = {deleteTask} onToggle={toggleReminder}/>) : 
-      ("No tasks to show")}
+      <Header onAdd = {()=>setShowAddTask(!showAddTask )}
+      showAdd= {showAddTask}/>
+      {showAddTask && <AddTask onAdd = {addTask} />}
+      {tasks.length > 0 ? (<Tasks tasks = {tasks} onDelete = {deleteTask} onToggle={toggleReminder}/>) : ("No tasks to show")}
     </div>
   );   
 }
